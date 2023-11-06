@@ -1,0 +1,62 @@
+### Signup User and generate and set session token
+POST https://localhost:4000/api/user/signup
+Content-Type: application/json
+
+{
+"email": "TheTestingLecturer@gmail.com",
+"password": "test_password",
+"username": "Le_Tester"
+}
+
+### Login User and generate and set session token
+
+POST https://localhost:4000/api/user/login
+Content-Type: application/json
+
+{
+"email": "TheLecturerTest@gmail.com",
+"password": "test_password"
+}
+
+### Home Page (Check Cookie token --> User Logged in?)
+
+POST https://localhost:4000/api/user/
+Content-Type: application/json
+
+{
+}
+
+### Logout User (Check that user is logged out, by running the previous test)
+
+GET https://localhost:4000/api/user/logout
+Content-Type: application/json
+
+{
+}
+
+###Post Page (Get All Posts)
+
+GET  https://localhost:4000/api/posts/
+Content-Type: application/json
+
+{
+}
+
+### Create a new post (You must be logged in first)
+
+POST https://localhost:4000/api/posts/
+Content-Type: application/json
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNjMGViMDQ2Mjc2MDc1YzQ2NjhlMSIsImlhdCI6MTY5OTE4ODg0MCwiZXhwIjoxNjk5NDQ4MDQwfQ.Iym_fvn_LelIW1R1egkPkRTmKWgmStaB3k3mw1skXEQ"
+
+{
+"caption": "Test Post 8"
+}
+
+### Delete a post (By id) format -> url/{Post ID} (You must be logged in first)
+
+DELETE  https://localhost:4000/api/posts/6547449f4bd261a064587f8c
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNjMGViMDQ2Mjc2MDc1YzQ2NjhlMSIsImlhdCI6MTY5OTE4ODg0MCwiZXhwIjoxNjk5NDQ4MDQwfQ.Iym_fvn_LelIW1R1egkPkRTmKWgmStaB3k3mw1skXEQ"
+
+{
+
+}
